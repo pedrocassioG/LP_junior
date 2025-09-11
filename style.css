@@ -37,67 +37,77 @@ body {
 
 /* --- 3. Conteúdo da Esquerda (Textos e Botão) --- */
 .hero-content {
-    flex: 1; /* Ocupa o espaço disponível */
-    max-width: 600px; /* Limita a largura do bloco de texto */
-    text-align: left; /* Alinha o texto à esquerda, como no modelo */
+    /* Propriedades Adicionadas para o alinhamento */
+    display: flex;
+    flex-direction: column;     /* Empilha os itens na vertical */
+    align-items: stretch;       /* Faz todos os itens se esticarem para ter a mesma largura */
+    
+    /* Propriedades que já existiam */
+    flex: 1;
+    max-width: 600px;
 }
 
 .hero-content h1 {
-    font-size: 1.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.3rem; /* ALTERADO */
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8); /* Cor do modelo */
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .hero-content h2 {
-    font-size: 2.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.86rem; /* ALTERADO */
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #ffffff; /* Cor do modelo */
+    color: #ffffff;
+}
+
+.titulo_verde{
+    color:#2e5900;
 }
 
 .hours-highlight {
-    /* Ajuste: Usando clamp para o tamanho responsivo, com quebra de linha no HTML */
-    font-size: clamp(6rem, 15vw, 10rem); /* Min, Adaptativo, Max */
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10.4rem; /* ALTERADO */
     font-weight: 900;
     color: #66fdff;
-    line-height: 0.9; /* Diminuído para aproximar as linhas do texto quebrado */
+    line-height: 0.9;
     margin-bottom: 20px;
-    word-break: keep-all; /* Evita quebra de palavra inesperada */
-    white-space: nowrap; /* Tenta manter o [180H] na mesma linha se possível */
+    word-break: keep-all;
+    white-space: nowrap;
 }
-
 .hero-content .description {
-    font-size: 1.1rem;
+    font-size: 1.95rem;
+    padding-top: 2rem;
     font-weight: 700;
     line-height: 1.6; 
-    margin-bottom: 15px;
-    /* A linha "max-width" foi removida */
+    text-align: justify; /* ADICIONADO AQUI */
+    color: #2e5900
 }
-
-/* E também substitua esta regra
-*/
 .hero-content .details {
-    font-size: 0.9rem;
+    padding-top: 1rem;
+    font-size: 1.32rem;
     margin-bottom: 30px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
-    /* A linha "max-width" foi removida */
+    text-align: justify; /* ADICIONADO AQUI */
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #b4d69a; /* Cor de fundo do botão */
-    color: #2e5900; /* Cor do texto do botão */
+    background-color: #b4d69a; 
+    color: #2e5900; 
     padding: 15px 40px;
-    border-radius: 50px; /* Bordas arredondadas */
+    border-radius: 50px; 
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .cta-button:hover {
@@ -116,11 +126,8 @@ body {
 /* Estilo para o card da imagem */
 .image-frame {
     position: relative; /* Para posicionar o logo dentro dele */
-    background-color: #88dce8; /* Tom um pouco mais claro que o fundo */
     border-radius: 25px; /* Bordas arredondadas */
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(40, 50, 54, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4); /* Borda branca sutil */
 }
 
 .hero-image-wrapper .main-image {
@@ -170,4 +177,9 @@ body {
         margin-left: auto;
         margin-right: auto; /* Centraliza o texto no mobile */
     }
+}
+.hero-content h1,
+.hero-content h2,
+.hours-highlight {
+    font-family: 'Bebas Neue', sans-serif;
 }
