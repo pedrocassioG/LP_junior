@@ -17,13 +17,13 @@ body {
 .hero-section {
     background-color: #72d3e0; /* Cor de fundo principal */
     color: #ffffff;
-    /* AJUSTE: Diminuído o padding vertical e o horizontal para ocupar mais a tela */
     padding: 40px 4%; 
     min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    display: flex;
 }
 
 .hero-container {
@@ -32,63 +32,77 @@ body {
     justify-content: space-between;
     max-width: 1400px; /* Aumentado para o conteúdo se expandir mais */
     width: 100%;
-    gap: 40px;
+    gap: 40px; /* Espaço entre o texto e a imagem */
 }
 
 /* --- 3. Conteúdo da Esquerda (Textos e Botão) --- */
+.hero-content {
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 600px; /* Limita a largura do bloco de texto */
+    text-align: left; /* Alinha o texto à esquerda, como no modelo */
+}
+
 .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
+    line-height: 1.2;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8); /* Um pouco mais transparente */
+    color: rgba(255, 255, 255, 0.8); /* Cor do modelo */
 }
 
 .hero-content h2 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 900;
-    margin-bottom: 25px;
+    line-height: 1.1;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #ffffff; /* Cor do modelo */
 }
 
 .hours-highlight {
-    font-size: 10rem; /* Aumentado para maior impacto */
+    /* Ajuste: Usando clamp para o tamanho responsivo, com quebra de linha no HTML */
+    font-size: clamp(6rem, 15vw, 10rem); /* Min, Adaptativo, Max */
     font-weight: 900;
     color: #66fdff;
-    line-height: 1; 
-    margin-bottom: 25px;
+    line-height: 0.9; /* Diminuído para aproximar as linhas do texto quebrado */
+    margin-bottom: 20px;
+    word-break: keep-all; /* Evita quebra de palavra inesperada */
+    white-space: nowrap; /* Tenta manter o [180H] na mesma linha se possível */
 }
 
 .hero-content .description {
     font-size: 1.1rem;
     font-weight: 700;
-    margin: 0 auto 15px auto; /* Centraliza o parágrafo */
-    max-width: 500px;
+    line-height: 1.6; 
+    margin-bottom: 15px;
+    /* A linha "max-width" foi removida */
 }
 
+/* E também substitua esta regra
+*/
 .hero-content .details {
-    font-size: 1rem;
-    margin: 0 auto 40px auto; /* Centraliza o parágrafo */
-    max-width: 600px;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
+    /* A linha "max-width" foi removida */
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #b4d69a;
-    color: #2e5900;
+    background-color: #b4d69a; /* Cor de fundo do botão */
+    color: #2e5900; /* Cor do texto do botão */
     padding: 15px 40px;
-    border-radius: 50px;
+    border-radius: 50px; /* Bordas arredondadas */
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave */
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Aumenta um pouco de tamanho */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
 }
 
 /* --- 4. Conteúdo da Direita (Imagem e Logo) --- */
@@ -99,19 +113,21 @@ body {
     align-items: center;
 }
 
-/* NOVO: Estilo para o card da imagem */
+/* Estilo para o card da imagem */
 .image-frame {
     position: relative; /* Para posicionar o logo dentro dele */
+    background-color: #88dce8; /* Tom um pouco mais claro que o fundo */
     border-radius: 25px; /* Bordas arredondadas */
     padding: 20px;
+    box-shadow: 0 10px 30px rgba(40, 50, 54, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Borda branca sutil */
 }
 
 .hero-image-wrapper .main-image {
     max-width: 100%;
     height: auto;
     display: block;
-    max-height: 500px;
-    /* REMOVIDO: A sombra agora está no card (.image-frame) */
+    max-height: 500px; /* Limita a altura da imagem */
 }
 
 .hero-image-wrapper .logo-image {
@@ -125,16 +141,17 @@ body {
 /* --- 5. Responsividade para Dispositivos Móveis --- */
 @media (max-width: 768px) {
     .hero-container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Coloca a imagem embaixo do texto */
+        text-align: center; /* Centraliza o texto no mobile */
     }
 
     .hero-content {
-        order: 2; 
+        order: 2; /* O texto virá depois da imagem no layout */
+        max-width: 100%; /* Permite que o texto ocupe mais largura no mobile */
     }
 
     .hero-image-wrapper {
-        order: 1; 
+        order: 1; /* A imagem virá primeiro */
         margin-bottom: 30px;
         width: 100%;
         max-width: 350px; /* Controla o tamanho da imagem no mobile */
@@ -145,12 +162,12 @@ body {
     }
 
     .hours-highlight {
-        font-size: 6rem;
+        font-size: clamp(4rem, 15vw, 6rem); /* Ajuste menor para mobile */
     }
 
     .hero-content .description,
     .hero-content .details {
         margin-left: auto;
-        margin-right: auto;
+        margin-right: auto; /* Centraliza o texto no mobile */
     }
 }
