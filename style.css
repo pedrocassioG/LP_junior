@@ -1,0 +1,161 @@
+/* css/style.css */
+
+/* --- 1. Importação de Fontes e Reset Básico --- */
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- 2. Estilos da Seção Principal (Hero) --- */
+.hero-section {
+    background-color: #72d3e0; /* Cor de fundo principal */
+    color: #ffffff;
+    /* AJUSTE: Diminuído o padding vertical e o horizontal para ocupar mais a tela */
+    padding: 40px 4%; 
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px; /* Aumentado para o conteúdo se expandir mais */
+    width: 100%;
+    gap: 40px;
+}
+
+/* --- 3. Conteúdo da Esquerda (Textos e Botão) --- */
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hours-highlight {
+    font-size: 9rem;
+    font-weight: 900;
+    color: #66fdff;
+    line-height: 0.9; 
+    margin-bottom: 20px;
+}
+
+.hero-content .description {
+    font-size: 1rem;
+    padding-top: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    max-width: 400px; 
+}
+
+.hero-content .details {
+    font-size: 0.9rem;
+    max-width: 450px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #b4d69a;
+    color: #2e5900;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 4. Conteúdo da Direita (Imagem e Logo) --- */
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* NOVO: Estilo para o card da imagem */
+.image-frame {
+    position: relative; /* Para posicionar o logo dentro dele */
+    border-radius: 25px; /* Bordas arredondadas */
+    padding: 20px;
+}
+
+.hero-image-wrapper .main-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px;
+    /* REMOVIDO: A sombra agora está no card (.image-frame) */
+}
+
+.hero-image-wrapper .logo-image {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 80px; /* Tamanho ajustado para o card */
+    height: 80px;
+}
+
+/* --- 5. Responsividade para Dispositivos Móveis --- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2; 
+    }
+
+    .hero-image-wrapper {
+        order: 1; 
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 350px; /* Controla o tamanho da imagem no mobile */
+    }
+
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hours-highlight {
+        font-size: 6rem;
+    }
+
+    .hero-content .description,
+    .hero-content .details {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
