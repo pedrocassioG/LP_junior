@@ -36,47 +36,42 @@ body {
 }
 
 /* --- 3. Conteúdo da Esquerda (Textos e Botão) --- */
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-}
-
 .hero-content h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 1.2;
     text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8); /* Um pouco mais transparente */
 }
 
 .hero-content h2 {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-transform: uppercase;
+    color: #ffffff;
 }
 
 .hours-highlight {
-    font-size: 9rem;
+    font-size: 10rem; /* Aumentado para maior impacto */
     font-weight: 900;
     color: #66fdff;
-    line-height: 0.9; 
-    margin-bottom: 20px;
+    line-height: 1; 
+    margin-bottom: 25px;
 }
 
 .hero-content .description {
-    font-size: 1rem;
-    padding-top: 2rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    max-width: 400px; 
+    margin: 0 auto 15px auto; /* Centraliza o parágrafo */
+    max-width: 500px;
 }
 
 .hero-content .details {
-    font-size: 0.9rem;
-    max-width: 450px;
-    margin-bottom: 30px;
-    line-height: 1.5;
+    font-size: 1rem;
+    margin: 0 auto 40px auto; /* Centraliza o parágrafo */
+    max-width: 600px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .cta-button {
