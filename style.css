@@ -1,7 +1,7 @@
 /* css/style.css */
 
 /* --- 1. Importação de Fontes e Reset Básico --- */
-@import url('fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;800&display=swap');
 
 * {
     margin: 0;
@@ -10,12 +10,12 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Manrope', sans-serif;
 }
 
 /* --- 2. Estilos da Seção Principal (Hero) --- */
 .hero-section {
-    background-color: #72d3e0; /* Cor de fundo principal */
+    background-color: #72d3e0;
     color: #ffffff;
     padding: 40px 4%; 
     min-height: 90vh;
@@ -23,44 +23,40 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    display: flex;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1400px; /* Aumentado para o conteúdo se expandir mais */
+    max-width: 1400px;
     width: 100%;
-    gap: 40px; /* Espaço entre o texto e a imagem */
+    gap: 40px;
 }
 
 /* --- 3. Conteúdo da Esquerda (Textos e Botão) --- */
 .hero-content {
-    /* Propriedades Adicionadas para o alinhamento */
     display: flex;
-    flex-direction: column;     /* Empilha os itens na vertical */
-    align-items: stretch;       /* Faz todos os itens se esticarem para ter a mesma largura */
-    
-    /* Propriedades que já existiam */
+    flex-direction: column;
+    align-items: flex-start; 
     flex: 1;
     max-width: 600px;
 }
 
 .hero-content h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.3rem; /* ALTERADO */
+    font-size: 3rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.8);
 }
 
 .hero-content h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.86rem; /* ALTERADO */
+    font-size: 4rem;
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1;
     margin-bottom: 20px;
     text-transform: uppercase;
     color: #ffffff;
@@ -72,29 +68,32 @@ body {
 
 .hours-highlight {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 10.4rem; /* ALTERADO */
+    font-size: 13rem;
     font-weight: 900;
     color: #66fdff;
-    line-height: 0.9;
-    margin-bottom: 20px;
+    line-height: 0.8;
+    margin-bottom: 35px;
     word-break: keep-all;
     white-space: nowrap;
 }
+
 .hero-content .description {
+    font-family: 'Manrope', sans-serif;
     font-size: 1.95rem;
     padding-top: 2rem;
     font-weight: 700;
     line-height: 1.6; 
-    text-align: justify; /* ADICIONADO AQUI */
+    text-align: justify;
     color: #2e5900
 }
 .hero-content .details {
+    font-family: 'Manrope', sans-serif;
     padding-top: 1rem;
     font-size: 1.32rem;
     margin-bottom: 30px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
-    text-align: justify; /* ADICIONADO AQUI */
+    text-align: left;
 }
 
 .cta-button {
@@ -104,29 +103,29 @@ body {
     padding: 15px 40px;
     border-radius: 50px; 
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.1rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    font-family: 'Manrope', sans-serif;
 }
 
 .cta-button:hover {
-    transform: scale(1.05); /* Aumenta um pouco de tamanho */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* --- 4. Conteúdo da Direita (Imagem e Logo) --- */
 .hero-image-wrapper {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
 }
 
-/* Estilo para o card da imagem */
 .image-frame {
-    position: relative; /* Para posicionar o logo dentro dele */
-    border-radius: 25px; /* Bordas arredondadas */
+    position: relative;
+    border-radius: 25px;
     padding: 20px;
 }
 
@@ -134,34 +133,42 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    max-height: 500px; /* Limita a altura da imagem */
+    max-height: 500px;
 }
 
 .hero-image-wrapper .logo-image {
     position: absolute;
     bottom: 25px;
     right: 25px;
-    width: 80px; /* Tamanho ajustado para o card */
+    width: 80px;
     height: 80px;
 }
 
-/* --- 5. Responsividade para Dispositivos Móveis --- */
+/* --- 5. Responsividade para Dispositivos Móveis (Seção Hero) --- */
 @media (max-width: 768px) {
     .hero-container {
-        flex-direction: column; /* Coloca a imagem embaixo do texto */
-        text-align: center; /* Centraliza o texto no mobile */
+        flex-direction: column;
+        text-align: left;
     }
 
     .hero-content {
-        order: 2; /* O texto virá depois da imagem no layout */
-        max-width: 100%; /* Permite que o texto ocupe mais largura no mobile */
+        order: 2;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;      
+    }
+
+    .hero-content .description, .hero-content .details {
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .hero-image-wrapper {
-        order: 1; /* A imagem virá primeiro */
+        order: 1;
         margin-bottom: 30px;
         width: 100%;
-        max-width: 350px; /* Controla o tamanho da imagem no mobile */
+        max-width: 350px;
     }
 
     .hero-content h2 {
@@ -169,17 +176,151 @@ body {
     }
 
     .hours-highlight {
-        font-size: clamp(4rem, 15vw, 6rem); /* Ajuste menor para mobile */
+        font-size: clamp(8rem, 25vw, 10rem);
     }
 
     .hero-content .description,
     .hero-content .details {
         margin-left: auto;
-        margin-right: auto; /* Centraliza o texto no mobile */
+        margin-right: auto;
     }
 }
-.hero-content h1,
-.hero-content h2,
-.hours-highlight {
+
+/* --- 6. Seção de Vídeo --- */
+.video-section {
+    background-color: #ffffff;
+    padding: 80px 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+}
+
+.video-placeholder {
+    width: 280px;
+    height: 430px;
+    background-color: #282A03;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.video-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+
+/* --- CÓDIGO CORRIGIDO ABAIXO --- */
+
+.video-content {
+    display: flex;
+    flex-direction: column;
+    /* A MUDANÇA PRINCIPAL ESTÁ AQUI 👇 */
+    align-items: flex-end; /* Alinha todos os textos à direita do container */
+    text-align: right;
+    max-width: 550px;
+}
+
+/* Estilo base para todos os títulos h2 nesta seção */
+.video-content h2 {
     font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 2px;
+}
+
+/* Classe para o h2 que é todo cinza */
+.video-content .gray-title {
+    color: #b2b2b2;
+}
+
+/* Classes de cor para os spans dentro dos h2s */
+.video-content .black-text {
+    color: #000000;
+}
+
+.video-content .gray-text {
+    color: #b2b2b2;
+}
+
+.video-description {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #161616;
+    line-height: 1.0;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+/* --- FIM DA CORREÇÃO --- */
+
+.video-cta-button {
+    display: inline-block;
+    background-color: #3E783E;
+    color: #ffffff;
+    padding: 17px 52px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.video-cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 7. Responsividade para a Nova Seção --- */
+@media (max-width: 992px) {
+    .video-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .video-content {
+        /* Em telas menores, o texto volta a ser centralizado */
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-placeholder {
+        width: 300px;
+        height: 480px;
+    }
+
+    .video-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .video-description {
+        font-size: 1.2rem;
+    }
+
+    .video-cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
 }
