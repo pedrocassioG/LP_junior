@@ -119,8 +119,9 @@ body {
 .hero-image-wrapper {
     flex: 1;
     display: flex;
-    justify-content: right;
-    align-items: right;
+    /* ALTERAÇÃO AQUI: Corrigido o alinhamento */
+    justify-content: flex-end; 
+    align-items: center;
 }
 
 .image-frame {
@@ -155,7 +156,7 @@ body {
         order: 2;
         max-width: 100%;
         align-items: center;
-        text-align: center;      
+        text-align: center;       
     }
 
     .hero-content .description, .hero-content .details {
@@ -187,16 +188,15 @@ body {
 }
 
 /* --- 6. Seção de Vídeo --- */
-/* --- Seção de Vídeo --- */
 .video-section {
     background: linear-gradient(135deg, #4caf50, #81c784);
     padding: 80px 4%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px; /* borda arredondada igual ao modelo */
+    border-radius: 25px;
     max-width: 1200px;
-    margin: 60px auto; /* centraliza e dá respiro nas laterais */
+    margin: 60px auto;
 }
 
 .video-container {
@@ -207,7 +207,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Bloco do vídeo */
 .video-placeholder {
     width: 280px;
     height: 430px;
@@ -226,7 +225,6 @@ body {
     color: #ffffff;
 }
 
-/* Textos */
 .video-content {
     display: flex;
     flex-direction: column;
@@ -265,7 +263,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* Botão */
 .video-cta-button {
     display: inline-block;
     background-color: #b7ff9e;
