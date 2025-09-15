@@ -228,6 +228,8 @@ body {
     align-items: flex-start;
     text-align: left;
     max-width: 550px;
+    text-align: right;
+
 }
 
 .video-content h2 {
@@ -237,6 +239,8 @@ body {
     text-transform: uppercase;
     line-height: 0.9;
     margin-bottom: 2px;
+    text-align: right;
+
 }
 
 .video-content .gray-title,
@@ -251,16 +255,20 @@ body {
 .video-description {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
+    margin-left: 50px;
     font-size: 1.3rem;
     color: #2e2e2e;
     margin-top: 15px;
     margin-bottom: 40px;
+    text-align: right;
+    
 }
 
 .video-cta-button {
     display: inline-block;
     background-color: #b7ff9e;
     color: #1c1c1c;
+    margin-left: 70px;
     padding: 17px 52px;
     border-radius: 50px;
     text-decoration: none;
