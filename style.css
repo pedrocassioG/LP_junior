@@ -67,10 +67,10 @@ body {
 }
 /* A regra para .hero-content h2 foi removida pois não existe mais no HTML */
 
-.titulo_verde{
-    color:#2e5900;
+/* Agora esta regra é a mais específica e vai funcionar */
+.hero-content h1 .titulo_verde {
+    color: #2e5900;
 }
-
 .hours-highlight {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13rem;
