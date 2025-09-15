@@ -398,42 +398,51 @@ body {
 
 .card {
     background-color: #72d3e0;
+
     border-radius: 15px;
-    border: 2px solid white;
     padding: 30px;
-    text-align: left;
+    /* text-align: left; <-- REMOVA OU COMENTE ESSA LINHA */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    /* ALTERE ESTAS PROPRIEDADES PARA CENTRALIZAR OS ITENS NO CARD */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Centraliza horizontalmente todos os itens filhos (ícone e parágrafo) */
+    
     gap: 15px;
-    min-height: 200px; /* Altura mínima para os cards */
+    min-height: 180px;
+    border: 2px solid white; 
 }
 
 .card-icon {
     width: 40px;
     height: 40px;
+    
+    /* ESTES JÁ ESTAVAM AQUI PARA CENTRALIZAR O ÍCONE DENTRO DO CÍRCULO */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #558B2F; /* Fundo verde do círculo do ícone */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center;     /* Centraliza o ícone verticalmente */
+    
+    background-color: #558B2F; /* ADICIONAR ESTA LINHA PARA TER O FUNDO VERDE NOVAMENTE */
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
-.card-icon img {
-    width: 24px; /* Tamanho do ícone de check */
-    height: 24px;
-    filter: invert(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Para ícone branco, se o SVG for preto */
-}
 
+.card-icon img {
+    width: 24px; /* Tamanho do ícone de check (ajuste se necessário) */
+    height: 24px;
+    filter: invert(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%); 
+}
 .card p {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 800;
     color: #ffffff;
     line-height: 1.5;
-    align-self: center;
+    text-align: center;
 }
 
 /* Responsividade para a seção de Público Alvo */
