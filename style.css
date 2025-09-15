@@ -11,6 +11,8 @@
 
 body {
     font-family: 'Manrope', sans-serif;
+    /* Adicionei uma cor de fundo base para evitar "flashes" brancos entre as seções */
+    background-color: #f0f0f0; 
 }
 
 /* --- 2. Estilos da Seção Principal (Hero) --- */
@@ -43,24 +45,27 @@ body {
     max-width: 600px;
 }
 
+/* AJUSTE 1: Estilos do h1 e h2 foram combinados aqui */
 .hero-content h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
+    font-size: 3rem; /* Estilo da primeira linha (antigo h1) */
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px; /* Margem do antigo h2 foi movida para cá */
 }
 
-.hero-content h2 {
+/* NOVO: Estilo para a segunda linha do título, que agora é um span */
+.hero-content h1 span {
+    display: block; /* Garante que ficará na linha de baixo */
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem;
+    font-size: 4rem; /* Estilo do antigo h2 */
     font-weight: 900;
-    line-height: 1;
-    margin-bottom: 20px;
     text-transform: uppercase;
     color: #ffffff;
 }
+/* A regra para .hero-content h2 foi removida pois não existe mais no HTML */
 
 .titulo_verde{
     color:#2e5900;
@@ -84,8 +89,9 @@ body {
     font-weight: 700;
     line-height: 1.6; 
     text-align: justify;
-    color: #2e5900
+    color: #2e5900;
 }
+
 .hero-content .details {
     font-family: 'Manrope', sans-serif;
     padding-top: 1rem;
@@ -119,7 +125,6 @@ body {
 .hero-image-wrapper {
     flex: 1;
     display: flex;
-    /* ALTERAÇÃO AQUI: Corrigido o alinhamento */
     justify-content: flex-end; 
     align-items: center;
 }
@@ -137,15 +142,7 @@ body {
     max-height: 500px;
 }
 
-.hero-image-wrapper .logo-image {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    width: 80px;
-    height: 80px;
-}
-
-/* --- 5. Responsividade para Dispositivos Móveis (Seção Hero) --- */
+/* --- 5. Responsividade (Seção Hero) --- */
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column;
@@ -172,9 +169,8 @@ body {
         max-width: 350px;
     }
 
-    .hero-content h2 {
-        font-size: 2.2rem;
-    }
+    /* AJUSTE: A regra de h2 foi removida, o h1 já se adapta bem. */
+    /* Se precisar, pode ajustar o font-size do h1 e do h1 span aqui dentro */
 
     .hours-highlight {
         font-size: clamp(8rem, 25vw, 10rem);
@@ -188,6 +184,7 @@ body {
 }
 
 /* --- 6. Seção de Vídeo --- */
+/* (Nenhuma mudança necessária nesta seção) */
 .video-section {
     background: linear-gradient(135deg, #4caf50, #81c784);
     padding: 80px 4%;
@@ -242,16 +239,13 @@ body {
     margin-bottom: 2px;
 }
 
-.video-content .gray-title {
+.video-content .gray-title,
+.video-content .gray-text {
     color: #e0e0e0;
 }
 
 .video-content .green-text {
     color: #b7ff9e;
-}
-
-.video-content .gray-text {
-    color: #e0e0e0;
 }
 
 .video-description {
@@ -282,25 +276,27 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade */
 @media (max-width: 992px) {
     .video-container {
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
-
     .video-content {
         align-items: center;
         text-align: center;
     }
 }
 
-/* --- 7. Seção Título do Público Alvo --- */
-.audience-title-section {
+
+/* --- 7. Seção do Público Alvo (UNIFICADA) --- */
+/* AJUSTE 2: As classes .audience-title-section e .audience-content-section foram removidas. */
+/* Agora, estilizamos os containers internos que estão dentro da nova <section class="audience-section"> */
+
+.audience-title-container {
     background-color: #558B2F; /* Cor de fundo verde escura */
     color: #ffffff;
-    padding: 30px 4%; /* Ajuste o padding conforme necessário */
+    padding: 30px 4%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,107 +304,94 @@ body {
     position: relative; /* Para posicionar a seta */
 }
 
-.audience-title-container {
-    max-width: 1200px;
-    width: 100%;
-}
-
-.audience-title-section h2 {
+/* O seletor foi ajustado para ser mais específico ao container */
+.audience-title-container h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsivo para o título */
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.2;
-    display: inline-block; /* Para o gradiente da imagem 1 */
-    background: linear-gradient(to right, #ffffff, #B7FF9E); /* Branco para verde claro */
+    display: inline-block;
+    background: linear-gradient(to right, #ffffff, #B7FF9E);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; /* Fallback para navegadores sem suporte a -webkit-text-fill-color */
-    padding: 0 10px; /* Espaçamento interno para o gradiente */
+    color: transparent;
+    padding: 0 10px;
+    
 }
 
 .scroll-down-icon {
     position: absolute;
-    bottom: -25px; /* Ajuste para posicionar o círculo abaixo da barra */
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px; /* Tamanho do círculo */
+    width: 50px;
     height: 50px;
-    background-color: #B7FF9E; /* Cor do círculo */
+    background-color: #B7FF9E;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    z-index: 10; /* Garante que a seta fique por cima de tudo */
 }
 
 .scroll-down-icon img {
-    width: 25px; /* Tamanho do ícone da seta */
+    width: 25px;
     height: 25px;
-    filter: invert(30%) sepia(85%) saturate(100%) hue-rotate(90deg) brightness(60%) contrast(120%); /* Ajuste de cor para a seta, ou use uma imagem verde */
 }
 
-/* --- 8. Seção de Conteúdo do Público Alvo --- */
-.audience-content-section {
-    background-color: #72d3e0; /* Cor de fundo azul claro */
+.audience-content-container {
+    background-color: #72d3e0;
     padding: 80px 4%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Para alinhar o h3 e o card-grid */
 }
 
-.audience-content-container {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-}
-
-.audience-content-section h3 {
-    /* Estilos de fonte e aparência (permanecem os mesmos) */
+/* O seletor foi ajustado para ser mais específico ao container */
+.audience-content-container h3 {
     font-family: 'Manrope', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 800;
     color: #ffffff;
     background: linear-gradient(to right, #558B2F, #81C784);
     border-radius: 50px;
-    padding: 20px 40px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     line-height: 1.2;
     text-align: center;
-    
-    /* --- MUDANÇAS AQUI --- */
-    display: block; /* Precisa ser um bloco para ter largura definida */
-    max-width: 1100px; /* Largura máxima para alinhar com a grade abaixo */
-    margin: 0 auto 60px auto; /* Centraliza o bloco e adiciona margem inferior */
+    display: inline-block; /* Faz o fundo se ajustar ao tamanho do texto + padding */
+    padding: 15px 300px;  /* AUMENTEI o padding lateral para esticar o fundo */
+    margin: 0 auto 60px auto;
 }
 
-.audience-content-section .highlight-green {
+.audience-content-container .highlight-green {
     color: #b7ff9e;
 }
 
 .card-grid {
+    /* AJUSTE 3: Resetando o estilo de lista padrão do navegador */
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0; /* Remove o espaçamento padrão da lista */
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1100px; /* Mesma largura máxima do título acima */
-    margin: 0 auto; /* Centraliza a grade na página */
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .card {
     background-color: #72d3e0;
-
     border-radius: 15px;
     padding: 30px;
-    /* text-align: left; <-- REMOVA OU COMENTE ESSA LINHA */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    
-    /* ALTERE ESTAS PROPRIEDADES PARA CENTRALIZAR OS ITENS NO CARD */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente todos os itens filhos (ícone e parágrafo) */
-    
+    align-items: center;
     gap: 15px;
     min-height: 180px;
     border: 2px solid white; 
@@ -417,23 +400,20 @@ body {
 .card-icon {
     width: 40px;
     height: 40px;
-    
-    /* ESTES JÁ ESTAVAM AQUI PARA CENTRALIZAR O ÍCONE DENTRO DO CÍRCULO */
     display: flex;
-    justify-content: center; /* Centraliza o ícone horizontalmente */
-    align-items: center;     /* Centraliza o ícone verticalmente */
-    
-    background-color: #558B2F; /* ADICIONAR ESTA LINHA PARA TER O FUNDO VERDE NOVAMENTE */
+    justify-content: center;
+    align-items: center;
+    background-color: #558B2F;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
-
 .card-icon img {
-    width: 24px; /* Tamanho do ícone de check (ajuste se necessário) */
+    width: 24px;
     height: 24px;
     filter: invert(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%); 
 }
+
 .card p {
     font-family: 'Manrope', sans-serif;
     font-size: 1.1rem;
@@ -445,26 +425,17 @@ body {
     text-align: center;
 }
 
-/* Responsividade para a seção de Público Alvo */
-@media (max-width: 768px) {
-    .audience-title-section h2 {
+/* --- 8. Responsividade (Seção Público Alvo) --- */
+@media (max-width: 992px) {
+    .audience-title-container h2 {
         font-size: clamp(2rem, 8vw, 3rem);
     }
-
-    .audience-content-section h3 {
+    .audience-content-container h3 {
         font-size: clamp(1.5rem, 5vw, 2rem);
+        padding-left: 30px;
+        padding-right: 30px;
     }
-    
     .card-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
-}
-
-@media (max-width: 480px) {
-    .audience-title-section {
-        padding: 20px 4%;
-    }
-    .audience-content-section {
-        padding: 40px 4%;
+        grid-template-columns: 1fr;
     }
 }
