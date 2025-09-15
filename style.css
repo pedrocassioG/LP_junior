@@ -295,3 +295,160 @@ body {
         text-align: center;
     }
 }
+
+/* --- 7. Seção Título do Público Alvo --- */
+.audience-title-section {
+    background-color: #558B2F; /* Cor de fundo verde escura */
+    color: #ffffff;
+    padding: 30px 4%; /* Ajuste o padding conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Para posicionar a seta */
+}
+
+.audience-title-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.audience-title-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsivo para o título */
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: inline-block; /* Para o gradiente da imagem 1 */
+    background: linear-gradient(to right, #ffffff, #B7FF9E); /* Branco para verde claro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback para navegadores sem suporte a -webkit-text-fill-color */
+    padding: 0 10px; /* Espaçamento interno para o gradiente */
+}
+
+.scroll-down-icon {
+    position: absolute;
+    bottom: -25px; /* Ajuste para posicionar o círculo abaixo da barra */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Tamanho do círculo */
+    height: 50px;
+    background-color: #B7FF9E; /* Cor do círculo */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.scroll-down-icon img {
+    width: 25px; /* Tamanho do ícone da seta */
+    height: 25px;
+    filter: invert(30%) sepia(85%) saturate(100%) hue-rotate(90deg) brightness(60%) contrast(120%); /* Ajuste de cor para a seta, ou use uma imagem verde */
+}
+
+/* --- 8. Seção de Conteúdo do Público Alvo --- */
+.audience-content-section {
+    background-color: #72d3e0; /* Cor de fundo azul claro */
+    padding: 80px 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audience-content-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.audience-content-section h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff; /* Cor padrão do texto (branco) */
+    margin-bottom: 60px; /* Mantém o espaçamento abaixo */
+    display: inline-block; /* Importante para o background se ajustar ao conteúdo */
+    background: linear-gradient(to right, #558B2F, #81C784); /* Gradiente verde */
+    border-radius: 50px; /* Bordas bem arredondadas, como na imagem */
+    padding: 20px 40px; /* Espaçamento interno da barra */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidade */
+    line-height: 1.2; /* Ajuste para o texto em duas linhas */
+    text-align: center; /* Garante que o texto esteja centralizado dentro da barra */
+}
+
+.audience-content-section .highlight-green {
+    color: #b7ff9e;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas em telas maiores, responsivo */
+    gap: 30px; /* Espaço entre os cards */
+    justify-items: center; /* Centraliza os cards */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente para os cards */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    min-height: 200px; /* Altura mínima para os cards */
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #558B2F; /* Fundo verde do círculo do ícone */
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card-icon img {
+    width: 24px; /* Tamanho do ícone de check */
+    height: 24px;
+    filter: invert(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Para ícone branco, se o SVG for preto */
+}
+
+.card p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* Responsividade para a seção de Público Alvo */
+@media (max-width: 768px) {
+    .audience-title-section h2 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .audience-content-section h3 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .audience-title-section {
+        padding: 20px 4%;
+    }
+    .audience-content-section {
+        padding: 40px 4%;
+    }
+}
