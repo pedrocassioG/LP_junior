@@ -187,29 +187,31 @@ body {
 }
 
 /* --- 6. Seção de Vídeo --- */
+/* --- Seção de Vídeo --- */
 .video-section {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #4caf50, #81c784);
     padding: 80px 4%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
+    border-radius: 25px; /* borda arredondada igual ao modelo */
+    max-width: 1200px;
+    margin: 60px auto; /* centraliza e dá respiro nas laterais */
 }
 
 .video-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
-    width: 100%;
     gap: 60px;
+    flex-wrap: wrap;
 }
 
+/* Bloco do vídeo */
 .video-placeholder {
     width: 280px;
     height: 430px;
-    background-color: #282A03;
+    background-color: #1c1f00;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -221,21 +223,18 @@ body {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
 
-/* --- CÓDIGO CORRIGIDO ABAIXO --- */
-
+/* Textos */
 .video-content {
     display: flex;
     flex-direction: column;
-    /* A MUDANÇA PRINCIPAL ESTÁ AQUI 👇 */
-    align-items: flex-end; /* Alinha todos os textos à direita do container */
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
     max-width: 550px;
 }
 
-/* Estilo base para todos os títulos h2 nesta seção */
 .video-content h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3.8rem;
@@ -245,36 +244,32 @@ body {
     margin-bottom: 2px;
 }
 
-/* Classe para o h2 que é todo cinza */
 .video-content .gray-title {
-    color: #b2b2b2;
+    color: #e0e0e0;
 }
 
-/* Classes de cor para os spans dentro dos h2s */
 .video-content .black-text {
-    color: #000000;
+    color: #1c1c1c;
 }
 
 .video-content .gray-text {
-    color: #b2b2b2;
+    color: #e0e0e0;
 }
 
 .video-description {
     font-family: 'Manrope', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.3rem;
-    color: #161616;
-    line-height: 1.0;
+    color: #2e2e2e;
     margin-top: 15px;
     margin-bottom: 40px;
 }
 
-/* --- FIM DA CORREÇÃO --- */
-
+/* Botão */
 .video-cta-button {
     display: inline-block;
-    background-color: #3E783E;
-    color: #ffffff;
+    background-color: #b2ff9e;
+    color: #1c1c1c;
     padding: 17px 52px;
     border-radius: 50px;
     text-decoration: none;
@@ -290,7 +285,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* --- 7. Responsividade para a Nova Seção --- */
+/* Responsividade */
 @media (max-width: 992px) {
     .video-container {
         flex-direction: column;
@@ -299,28 +294,7 @@ body {
     }
 
     .video-content {
-        /* Em telas menores, o texto volta a ser centralizado */
         align-items: center;
         text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .video-placeholder {
-        width: 300px;
-        height: 480px;
-    }
-
-    .video-content h2 {
-        font-size: 2.8rem;
-    }
-
-    .video-description {
-        font-size: 1.2rem;
-    }
-
-    .video-cta-button {
-        padding: 12px 30px;
-        font-size: 1rem;
     }
 }
