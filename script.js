@@ -31,3 +31,27 @@ const swiper = new Swiper('.testimonial-swiper', {
     },
   },
 });
+
+// =================================================
+// =========== LÓGICA DO ACCORDION (FAQ) ===========
+// =================================================
+const faqItems = document.querySelectorAll('.faq-question');
+
+faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Pega o painel de resposta correspondente
+        const answer = item.nextElementSibling;
+        
+        // Alterna a classe 'active' no botão clicado
+        item.classList.toggle('active');
+
+        // Abre ou fecha a resposta
+        if (answer.style.maxHeight) {
+            // Se já tiver uma altura, fecha (zera a altura)
+            answer.style.maxHeight = null;
+        } else {
+            // Se estiver fechado, abre (define a altura para o tamanho do conteúdo)
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        } 
+    });
+});
