@@ -296,6 +296,15 @@ body {
         align-items: center;
         text-align: center;
     }
+    .video-content h2{
+        text-align: center;
+    }
+    .video-description{
+        margin-left: 0px;
+    }
+    .video-cta-button {
+        margin-left: 0px;
+    }
 }
 
 
