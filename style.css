@@ -614,16 +614,21 @@ body {
 /* --- 11. Seção de Perguntas Frequentes (FAQ) --- */
 .faq-section {
     background-color: #43A047; /* Mesmo verde da seção de depoimentos */
-    padding: 80px 4%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 200px;
     color: #ffffff;
 }
 
 .faq-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 100px;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 300px;
 }
 
 /* Coluna da Esquerda (Título) */
@@ -645,12 +650,14 @@ body {
     font-family: 'Manrope', sans-serif;
     font-size: 1.1rem;
     margin-top: 15px;
-    max-width: 300px;
+    margin-right: 20px;
+    max-width: 400px;
 }
 
 /* Coluna da Direita (Perguntas) */
 .faq-accordion {
-    flex: 2; /* Ocupa 2 partes do espaço, sendo maior */
+    flex: 2; /* Ocupa 3 partes do espaço, sendo maior */
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -676,7 +683,6 @@ body {
     font-size: 1.2rem;
     text-align: left;
     cursor: pointer;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -713,17 +719,22 @@ body {
 
 /* Responsividade */
 @media (max-width: 992px) {
+        .faq-section {
+        padding: 40px 20px; /* reduz padding lateral */
+    }
     .faq-container {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: center;
+        align-items: center;
+        gap: 40px; /* reduz espaço entre colunas */
+        margin: 0 auto;
     }
 
     .faq-header {
-        border-left: none;
-        padding-left: 0;
-        margin-bottom: 40px;
-        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+        .reason-card:hover {
+        transform: none; /* desativa zoom em mobile */
     }
 
     .faq-header p {
