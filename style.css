@@ -58,7 +58,6 @@ body {
 
 /* NOVO: Estilo para a segunda linha do título, que agora é um span */
 .hero-content h1 span {
-    display: block; /* Garante que ficará na linha de baixo */
     font-family: 'Bebas Neue', sans-serif;
     font-size: 4rem; /* Estilo do antigo h2 */
     font-weight: 900;
