@@ -431,15 +431,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #558B2F;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
 .card-icon img {
-    width: 24px;
-    height: 24px;
-    filter: invert(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%); 
+    width: 48px;
+    height: 60px;
 }
 
 .card p {
