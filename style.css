@@ -872,3 +872,7 @@ body {
         padding: 15px 40px;
     }
 }
+
+html {
+  scroll-behavior: smooth;
+}

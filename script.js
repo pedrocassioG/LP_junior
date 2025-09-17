@@ -55,3 +55,12 @@ faqItems.forEach(item => {
         } 
     });
 });
+
+document.querySelectorAll('a[href="#offer-section"]').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#offer-section').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
