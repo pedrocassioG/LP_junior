@@ -220,6 +220,12 @@ body {
     
 }
 
+.video-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /* Garante que o vídeo também tenha bordas arredondadas */
+}
+
 .video-text {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
