@@ -203,11 +203,13 @@ body {
     align-items: center;
     justify-content: center;
     gap: 60px;
+    margin-left: 200px;
     flex-wrap: wrap;
+    padding-right: 200px;
 }
 
 .video-placeholder {
-    width: 280px;
+    width: 500px;
     height: 430px;
     background-color: #282A03;
     border-radius: 20px;
@@ -215,6 +217,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    
 }
 
 .video-text {
@@ -292,6 +295,16 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 40px;
+        margin: auto;
+        padding-right: 0px;
+    }
+    .video-section{
+        margin: auto;
+
+    }
+    .video-placeholder{
+        margin: auto;
+        width: 350px;
     }
     .video-content {
         align-items: center;
