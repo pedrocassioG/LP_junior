@@ -48,12 +48,11 @@ body {
 /* AJUSTE 1: Estilos do h1 e h2 foram combinados aqui */
 .hero-content h1 {
     font-family: 'Bebas Neue', sans-serif;
-    text-shadow: 2px 2px 4px #000000;
     font-size: 3rem; /* Estilo da primeira linha (antigo h1) */
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 20px; /* Margem do antigo h2 foi movida para cá */
 }
 
@@ -63,15 +62,13 @@ body {
     font-size: 4rem; /* Estilo do antigo h2 */
     font-weight: 900;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px #000000;
-    color: #ffffff;
+    color: #000000;
 }
 /* A regra para .hero-content h2 foi removida pois não existe mais no HTML */
 
 /* Agora esta regra é a mais específica e vai funcionar */
 .hero-content h1 .titulo_verde {
     color: #2e5900;
-    text-shadow: 0px 0px 0px #000000;
 }
 .hours-highlight {
     font-family: 'Bebas Neue', sans-serif;
@@ -101,10 +98,9 @@ body {
     font-size: 1.2rem;
     margin-bottom: 30px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
+    color: #000000;
     text-align: justify;
     text-align-last: justify;
-    text-shadow: 2px 2px 4px #000000;
 
 }
 
@@ -477,7 +473,8 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #000000;
+
     line-height: 1.5;
     text-align: center;
 }
