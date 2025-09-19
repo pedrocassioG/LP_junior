@@ -890,6 +890,18 @@ body {
     
 }
 
+.pricing-text-old{
+    font-family: 'Manrope', sans-serif;
+    font-size: 2rem;
+    color: #616161;
+    margin-bottom: 5px;
+}
+
+.green-price{
+    text-decoration: line-through;
+    text-decoration-color: #000000;
+}
+
 /* Responsividade para a seção de oferta */
 @media (max-width: 768px) {
     .offer-section {
